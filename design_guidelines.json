@@ -1,0 +1,109 @@
+{
+  "theme": "dark",
+  "archetype": "ARCHETYPE 4: SWISS & HIGH-CONTRAST (Modified for 'Industrial Executive' Command Center)",
+  "typography": {
+    "headings": {
+      "font_family": "Cabinet Grotesk, sans-serif",
+      "weights": ["700", "900"],
+      "instruction": "Use for all module titles, metric hero numbers, and primary card headings. Must use tight tracking (tracking-tight). Represents structural authority."
+    },
+    "body": {
+      "font_family": "IBM Plex Sans, sans-serif",
+      "weights": ["400", "500"],
+      "instruction": "Use for readable lists, descriptions, and CRM data. Prioritize legibility in dense interfaces."
+    },
+    "monospace": {
+      "font_family": "JetBrains Mono, monospace",
+      "weights": ["400", "600"],
+      "instruction": "MANDATORY for all Growth Score numbers, metric data points, and tabular data (CRM/Invoices) to ensure perfect vertical column alignment."
+    }
+  },
+  "colors": {
+    "background": "#09090B",
+    "surface": "#18181B",
+    "surface_elevated": "#27272A",
+    "primary": "#F97316",
+    "primary_hover": "#EA580C",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "danger": "#EF4444",
+    "instructions": "Strict Dark Mode implementation. DO NOT use generic Vercel/Stripe blue. Use pure #09090B (Tailwind zinc-950) for the app shell and #18181B for widget cards. The primary accent (Signal Orange #F97316) is reserved exclusively for AI 'Fix this for me' actions and primary growth drivers."
+  },
+  "visual_enhancers": {
+    "surfaces": "Grid Borders (Technical Look). 1px solid borders (border-white/10). No soft shadows on cards. The UI must feel like a tactical, objective dashboard.",
+    "ai_highlights": "Use the 'Tracing Beam' effect (a glowing gradient border mask) on the 'Next Best Action' and Growth Opportunities cards to signal AI intelligence.",
+    "glassmorphism": "Only use for sticky headers, floating command palettes, or dialog overlays. Must use high blur (backdrop-blur-xl) and a crisp 1px inner border (border-white/10). Do NOT use transparent backgrounds without blur."
+  },
+  "layouts": {
+    "app_shell": "Modern SaaS layout: Fixed left sidebar (w-64). Main content area takes the remaining width. Sidebar must visually differentiate active V1 modules from 'locked/coming soon' V2 modules (use opacity-50 and a small lock icon).",
+    "dashboard_grid": "High Density Grid (Bento style) for the Command Center. Base grid-cols-1 md:grid-cols-3 lg:grid-cols-4. Tight gaps (gap-4 or gap-6). Ensure all metric cards stretch vertically to fill rows (h-full).",
+    "pipeline_board": "Kanban board style with a horizontal scrolling container. Columns must have distinct, subtle background tints (e.g., bg-zinc-900/50) and clear drop zones.",
+    "ai_review_ui": "Use a split-pane or bottom-drawer layout for the AI generation review/approve flow, keeping context visible."
+  },
+  "components": {
+    "buttons": "Sharp corners (rounded-none or rounded-sm). Primary 'Fix this for me' buttons must have maximum contrast (Black text on Signal Orange bg). Include a subtle pulse animation for high-priority AI actions.",
+    "cards": "Customize Shadcn Card component: Remove default shadows, set background to zinc-900, border to border-white/10. Internal padding should be dense (p-4 to p-6).",
+    "inputs": "Shadcn inputs with zinc-900 background, focus-visible:ring-1 focus-visible:ring-orange-500. No heavy outlines.",
+    "tables": "Use tabular-nums class for all numerical data. Subtle hover effect on rows (hover:bg-zinc-800/50).",
+    "tabs": "Override default Shadcn tabs height (h-auto) and use a technical indicator (e.g., a sharp orange underline for the active tab)."
+  },
+  "motion": {
+    "micro_interactions": "All interactive elements must change state on hover (e.g., text color brightens, subtle border change). Click/press states should use active:scale-95.",
+    "page_transitions": "Staggered fade-in (framer-motion) for dashboard widgets. Content should appear systematically, not all at once.",
+    "ai_generation": "Use shimmering skeleton loaders while AI is processing. Output text in the review UI MUST use a typewriter/streaming reveal animation."
+  },
+  "accessibility": {
+    "contrast": "Ensure minimum 4.5:1 contrast for all text. Use pure white for primary text against dark backgrounds.",
+    "focus": "All interactive elements must have a visible focus ring (focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950).",
+    "reduced_motion": "Respect prefers-reduced-motion for all streaming and pulse animations.",
+    "test_attributes": "All interactive elements MUST include data-testid (e.g., data-testid='sidebar-nav-grow', data-testid='fix-this-button', data-testid='pipeline-stage')."
+  },
+  "media": {
+    "image_urls": {
+      "onboarding_hero": {
+        "url": "https://images.unsplash.com/photo-1758598497635-48cbbb1f6555?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxzbWFsbCUyMGJ1c2luZXNzJTIwb3duZXIlMjBtb2Rlcm4lMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzg3MjA0NDExfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Smiling man in modern office setting - use for auth page split-screen or onboarding welcome wizard."
+      },
+      "auth_background": {
+        "url": "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3ODcyMDQ0MTF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract gray geometric building - use as full-bleed background alternative for the login/register screen with a heavy black overlay (bg-black/80)."
+      },
+      "community_avatar": {
+        "url": "https://images.pexels.com/photos/10376033/pexels-photo-10376033.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional man on phone - use as dummy data for CRM leads or review customers to add realism."
+      }
+    },
+    "instructions": "Never use placeholder image URLs (like via.placeholder.com). If rendering avatars for the CRM or Reviews, use the provided community_avatar or generic Lucide user icons. Avoid generic stock photography inside the dashboard itself; reserve it for Auth and Onboarding."
+  },
+  "libraries": {
+    "icons": "lucide-react (already installed). DO NOT use AI assistant emoji characters.",
+    "charts": "recharts (wrapped in Shadcn Chart components) for the Growth Score gauge, metric cards, and SEO health trackers.",
+    "motion": "framer-motion for the dashboard staggered entrance, pipeline drag-and-drop (or standard react-beautiful-dnd/dnd-kit), and AI streaming reveals.",
+    "notifications": "sonner for all success/error toasts. Located at /app/frontend/src/components/ui/sonner.jsx."
+  },
+  "instructions_to_main_agent": [
+    "You are building 'Venturelyx' - a Business Command Center for business owners. Use owner-friendly, empowering language; avoid dense developer jargon.",
+    "Implement the UI exclusively in React .jsx and .js files (no TypeScript / .tsx files as per existing structure).",
+    "Maintain high density and strict optical alignment for the dashboard.",
+    "DO NOT apply 'transition: all' globally in CSS. Target specific properties to prevent breaking layout transforms.",
+    "DO NOT center align the app container (.App { text-align: center; }). Ensure standard left alignment for reading flow.",
+    "Use Generous Spacing for the main dashboard shell padding (p-8 or p-12), but keep widget internal padding tight (p-4 or p-6).",
+    "Explicitly render the left sidebar with all 6 modules, applying visual locks (opacity-50 + icon) to GROW, SOURCE, and AI TEAM if they are strictly V2.",
+    "Highlight the 'Fix this for me' buttons prominently using the primary Signal Orange color.",
+    "Mock AI generation logic using setTimeout/Promises to demonstrate the review/approve flow with the streaming text effect.",
+    "Ensure all Shadcn components are fully customized via Tailwind to match the dark 'Grid Borders' technical theme.",
+    "Add 'data-testid' attributes to all major interactive components (buttons, inputs, navigation links) to support E2E testing."
+  ],
+  "universal_guidelines": [
+    "Avoid generic centered layouts and simplistic Vercel-like gradients.",
+    "Create depth through layered design elements with z-index hierarchy, even in flat/technical designs (e.g., Command Palettes casting deep shadows).",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) only where necessary, such as sticky headers or modal backdrops.",
+    "Always use modern button styles (sharp or slightly rounded corners) with clear interaction animations (hover/active states).",
+    "Never use AI assistant emoji characters (\ud83e\udd16\ud83e\udde0\ud83d\udcad). Use clean Lucide icons (e.g., Sparkles, Zap, Activity).",
+    "Prioritize using pre-existing components from src/components/ui before creating custom HTML elements for standard interactions.",
+    "Use 'sonner' for toast notifications, located in /app/frontend/src/components/ui/sonner.jsx."
+  ]
+}
